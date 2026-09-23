@@ -24,7 +24,6 @@ html {
     overflow-x: hidden;
 }
 
-/* Background gradient matching the reference design */
 body {
     background: #0b0f14;
     background-image: 
@@ -40,7 +39,6 @@ body {
     padding: 3rem 2rem;
 }
 
-/* Main rounded card container wrapping all sections */
 .main-card {
     position: relative;
     width: 100%;
@@ -56,7 +54,6 @@ section {
     padding: 6rem 7% 4rem;
 }
 
-/* Header inside the card */
 .header {
     position: absolute;
     top: 0;
@@ -100,7 +97,6 @@ section {
     display: none;
 }
 
-/* Home Section Layout */
 .home {
     display: flex;
     justify-content: space-between;
@@ -185,7 +181,6 @@ section {
     opacity: 0.9;
 }
 
-/* Right Side Image with Glowing Ring */
 .home-img {
     display: flex;
     justify-content: center;
@@ -227,68 +222,297 @@ section {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
-/* About Section */
-.about {
-    background: rgba(255, 255, 255, 0.02);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.about-content {
-    max-width: 80rem;
-    margin: 0 auto;
+.heading{
     text-align: center;
+    font-size: 30px;
+    color: #00ff66;
 }
-
-.heading {
-    text-align: center;
-    font-size: 3.8rem;
-    margin-bottom: 2rem;
-}
-
-.heading span {
-    color: var(--main-color);
-}
-
-.about-content p {
-    font-size: 1.6rem;
+.about-content p{
+   font-size: 1.6rem;
     line-height: 1.8;
     color: #a0aec0;
+    text-align: center;
+    
+    
 }
 
-/* Services / Skills Section */
+/* Experience & Education Section Styles */
+.exp-edu-section {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.tab-btn {
+    padding: 1rem 2.5rem;
+    background: var(--second-bg-color);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background: var(--main-color);
+    color: #151922;
+    border-color: var(--main-color);
+    box-shadow: 0 0 1.5rem rgba(0, 255, 102, 0.3);
+}
+
+.content-container {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.content-container.active {
+    display: block;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Timeline Layout */
+/* Timeline Layout - Թարմացված տարբերակ */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: rgba(0, 255, 102, 0.3);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-left, .timeline-right {
+    width: 44%;
+}
+
+.timeline-left {
+    text-align: right;
+}
+
+.timeline-left h3 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.timeline-left .company {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Ամսաթիվը տեղափոխում ենք վերնագրի տակ, որ չխառնվի իրար */
+.timeline-center {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--main-color);
+    background: rgba(0, 255, 102, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    display: inline-block;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--main-color);
+    top: 20px;
+}
+
+.timeline-right {
+    text-align: left;
+}
+
+.timeline-right p {
+    font-size: 1.35rem;
+    color: #a0aec0;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+}
+
+/* Մոբայլ տարբերակի համար */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 40px;
+    }
+    .timeline-left, .timeline-right {
+        width: 100%;
+        text-align: left !important;
+    }
+    .timeline-dot{
+        left: 20px;
+    }
+  
+}
+/* Skills Expandable Card Styles */
 .services-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.services-container .services-box {
-    flex: 1 1 26rem;
-    background: var(--second-bg-color);
-    padding: 3rem 2rem;
-    border-radius: 2rem;
-    text-align: center;
-    border: .2rem solid rgba(255, 255, 255, 0.05);
-    transition: .3s;
+.skill-card {
+    width: 100%;
+   background-image: 
+        radial-gradient(circle at 0% 50%, rgba(0, 255, 60, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 100% 50%, rgba(0, 255, 60, 0.45) 0%, transparent 40%),
+        linear-gradient(180deg, #0b0f14 0%, #111a14 50%, #0b0f14 100%);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2.5rem;
+    padding: 3.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease;
 }
 
-.services-container .services-box:hover {
-    border-color: var(--main-color);
-    transform: translateY(-5px);
+.skill-card:hover {
+    border-color: rgba(0, 255, 102, 0.3);
 }
 
-.services-box i,
-.services-box svg {
-    font-size: 5.5rem;
-    color: var(--main-color);
+.skill-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 1.5rem;
 }
 
-.services-box h3 {
-    font-size: 2rem;
+.skill-card-header h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.toggle-btn {
+    width: 4.5rem;
+    height: 4.5rem;
+    background: var(--second-bg-color);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.toggle-btn i {
+    font-size: 2.4rem;
+    color: var(--main-color);
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.toggle-btn:hover i {
+    color: #151922;
+}
+
+.skill-desc {
+    font-size: 1.5rem;
+    color: #a0aec0;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.skills-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+}
+
+.skill-card.active .skills-content {
+    max-height: 400px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-card.active .toggle-btn i {
+    transform: rotate(180deg);
+}
+
+.skills-content h4 {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tag {
+    font-size: 1.3rem;
+    padding: 0.6rem 1.4rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.skill-tag:hover {
+    border-color: var(--main-color);
+    color: var(--main-color);
+    background: rgba(0, 255, 102, 0.05);
 }
 
 /* Portfolio Section */
@@ -313,7 +537,7 @@ section {
 }
 
 .portfolio-box img {
-   width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: contain;
     transition: .5s ease;
@@ -431,14 +655,12 @@ section {
     box-shadow: 0 0 1rem var(--main-color);
 }
 
-/* Responsive for Contact Container */
 @media (max-width: 768px) {
     .contact-container {
         grid-template-columns: 1fr;
     }
 }
 
-/* Footer */
 .footer {
     display: flex;
     justify-content: flex-end;
@@ -462,7 +684,6 @@ section {
     color: #151922;
 }
 
-/* Responsive design */
 @media (max-width: 991px) {
     .home {
         flex-direction: column-reverse;
@@ -473,13 +694,13 @@ section {
     .home-action {
         justify-content: center;
     }
-   #menu-icon {
+    #menu-icon {
         display: block;
         cursor: pointer;
     }
 
     .navbar {
-       position: absolute;
+        position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
@@ -487,8 +708,6 @@ section {
         background: var(--card-bg);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3);
-        
-        /* Թաքցված վիճակ transition-ի համար */
         display: flex;
         flex-direction: column;
         opacity: 0;
@@ -496,11 +715,10 @@ section {
         visibility: hidden;
         pointer-events: none;
         transition: all 0.3s ease;
-       
     }
 
     .navbar.active {
-       opacity: 1;
+        opacity: 1;
         transform: translateY(0);
         visibility: visible;
         pointer-events: auto;

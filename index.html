@@ -12,7 +12,7 @@
 
 <body>
 
-    <!-- Main Card Wrapper (holding the full landing page layout) -->
+    <!-- Main Card Wrapper -->
     <div class="main-card">
 
         <!-- header -->
@@ -24,6 +24,7 @@
                 <a href="#about">About</a>
                 <a href="#services">Skills</a>
                 <a href="#portfolio">Projects</a>
+                <a href="#contact">Contact</a>
             </nav>
         </header>
 
@@ -40,7 +41,6 @@
                         <a href="https://www.linkedin.com/in/suren-ghazaryan-883673258/" target="_blank">
                             <i class='bx bxl-linkedin'></i>
                         </a>
-        
                     </div>
                 </div>
             </div>
@@ -61,44 +61,142 @@
                     record in developing interactive gaming mini-apps and e-commerce
                     solutions. Passionate about writing clean, maintainable code and optimizing
                     user experiences.</p>
+
+                <!-- Experience & Education Timeline Section -->
+                <div class="exp-edu-section">
+                    <div class="btn-box">
+                        <button class="tab-btn active" data-target="experience">Experience</button>
+                        <button class="tab-btn" data-target="education">Education</button>
+                    </div>
+
+                    <!-- Experience Content -->
+                    <div class="content-container active" id="experience">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-left">
+                                    <h3>Frontend Developer</h3>
+                                    <span class="company">AGI Alliance Group</span>
+                                </div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-center">September 2025 – January 2026</div>
+                                <div class="timeline-right">
+                                    <ul>
+                                        <li>Developed and optimized Telegram Mini Apps (TMA) using React.js, ensuring a
+                                            seamless mobile-first user
+                                            experience.</li>
+                                        <li>
+                                            Integrated Telegram Web Apps SDK to handle user authentication and
+                                            synchronize platform-specific themes.
+                                        </li>
+                                        <li>
+                                            Collaborated with backend teams to integrate game data and user progress via
+                                            RESTful APIs.
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-left">
+                                    <h3>Front-End Developer (Freelance)</h3>
+                                    <span class="company">Upwork</span>
+                                </div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-center">January 2025 - August 2025
+                                </div>
+                                <div class="timeline-right">
+                                    <ul>
+                                        <li>
+                                            Developed high-performance, responsive landing pages for international
+                                            clients using React.js and
+                                            JavaScript.
+                                        </li>
+                                        <li>
+                                            Utilized SCSS for modular and maintainable styling, ensuring pixel- perfect
+                                            UI across all devices and
+                                            browsers.
+
+                                        </li>
+                                        <li>
+                                            Focused on creating reusable UI components to speed up development and
+                                            ensure code consistency.
+                                        </li>
+                                        <li>
+                                            Optimized web pages for fast loading times and improved user engagement
+                                            through clean, efficient code.
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Content -->
+                    <div class="content-container" id="education">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-left">
+                                    <h3>Bachelor's Degree in Informatics</h3>
+                                    <span class="company">Shirak State University
+                                    </span>
+                                </div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-center">2015-2020</div>
+                               
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-left">
+                                    <h3>Front-End Development Course</h3>
+                                    <span class="company">GITC - Information Technologies Center</span>
+                                </div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-center">June 2023 – November 2023</div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- services section -->
+        <!-- services / skills section -->
         <section class="services" id="services">
             <h2 class="heading">My <span>Skills</span></h2>
             <div class="services-container">
-                <div class="services-box">
-                    <i class='bx bx-code-alt'></i>
-                    <h3>Html/Css/Sass/Scss</h3>
+
+                <!-- Developer Skill Card with Expandable Toggle -->
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h3>Developer</h3>
+                        <button class="toggle-btn" aria-label="Toggle Skills">
+                            <i class='bx bx-chevron-down'></i>
+                        </button>
+                    </div>
+
+                    <p class="skill-desc">
+                        Website creation with HTML, CSS, JavaScript. Professional websites with TypeScript, React,
+                        Next.js, and lots of creativity.
+                    </p>
+
+                    <div class="skills-content">
+                        <h4>Skills & Tools</h4>
+                        <div class="tags-container">
+                            <span class="skill-tag">Html</span>
+                            <span class="skill-tag">Css</span>
+                             <span class="skill-tag">Sass</span>
+                              <span class="skill-tag">Scss</span>
+                               <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">Redux Toolkit</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="services-box">
-                    <svg viewBox="0 0 24 24" width="55" height="55" fill="currentColor">
-                        <path
-                            d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.217 1.233 2.637 2.676 5.712 2.676 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624-1.217-1.233-2.637-2.676-5.712-2.676zm-6.000 6c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.217 1.233 2.637 2.676 5.712 2.676 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624-1.217-1.233-2.637-2.676-5.712-2.676z" />
-                    </svg>
-                    <h3>Tailwind.css</h3>
-                </div>
-                <div class="services-box">
-                    <i class="bx bxl-javascript"></i>
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="services-box">
-                    <i class="bx bxl-react"></i>
-                    <h3>React.Js/Redux/Toolkit</h3>
-                </div>
-                <div class="services-box">
-                    <i class='bx bxl-typescript'></i>
-                    <h3>TypeScript</h3>
-                </div>
-                <div class="services-box">
-                    <i class='bx bxl-react'></i>
-                    <h3>Next.Js</h3>
-                </div>
-                <div class="services-box">
-                    <i class="bx bxl-github"></i>
-                    <h3>Git</h3>
-                </div>
+
             </div>
         </section>
 
@@ -107,16 +205,15 @@
             <h2 class="heading"><span>Projects</span></h2>
             <div class="portfolio-container">
                 <div class="portfolio-box">
-                    <img src="img/online-shop-logo-design-template-vector-removebg-preview.png" alt="">
+                    <img src="img/0761540c-b218-466d-9005-cea173c34aba-removebg-preview.png" alt="">
                     <div class="portfolio-layer">
                         <h4>E-commerce Project</h4>
-                        <a href="https://e-commerce-eight-drab-36.vercel.app/"
-                            target="_blank">
+                        <a href="https://e-commerce-eight-drab-36.vercel.app/" target="_blank">
                             <i class='bx bx-link-external'></i>
                         </a>
                     </div>
                 </div>
-                 <div class="portfolio-box">
+                <div class="portfolio-box">
                     <img src="img/plushy_logo.png" alt="">
                     <div class="portfolio-layer">
                         <h4>Plushy Gold</h4>
@@ -138,8 +235,7 @@
                     <img src="img/269ab397-737b-4c80-9350-744919d48f78-cover-removebg-preview.png" alt="">
                     <div class="portfolio-layer">
                         <h4>Todos</h4>
-                        <a href="https://todos-nu-inky.vercel.app/"
-                            target="_blank">
+                        <a href="https://todos-nu-inky.vercel.app/" target="_blank">
                             <i class='bx bx-link-external'></i>
                         </a>
                     </div>
@@ -153,36 +249,35 @@
                         </a>
                     </div>
                 </div>
-                
             </div>
         </section>
 
+        <!-- contact section -->
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me</span></h2>
+            <div class="contact-container">
+                <div class="contact-box">
+                    <i class='bx bxl-gmail'></i>
+                    <h3>Gmail</h3>
+                    <p>suren.ghazaryan.dev@gmail.com</p>
+                    <a href="mailto:suren.ghazaryan.dev@gmail.com" class="contact-btn">Send Message</a>
+                </div>
+                <div class="contact-box">
+                    <i class='bx bx-phone'></i>
+                    <h3>Phone</h3>
+                    <p>+374 98 02 22 98</p>
+                    <a href="tel:+37498022298" class="contact-btn">Call Me</a>
+                </div>
+                <div class="contact-box">
+                    <i class='bx bxl-linkedin'></i>
+                    <h3>LinkedIn</h3>
+                    <p>Suren Ghazaryan</p>
+                    <a href="https://www.linkedin.com/in/suren-ghazaryan-883673258/" target="_blank"
+                        class="contact-btn">Connect</a>
+                </div>
+            </div>
+        </section>
 
-<!-- contact section -->
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
-        <div class="contact-container">
-            <div class="contact-box">
-                <i class='bx bxl-gmail'></i>
-                <h3>Gmail</h3>
-                <p>suren.ghazaryan.dev@gmail.com</p>
-                <a href="mailto:suren.ghazaryan.dev@gmail.com" class="contact-btn">Send Message</a>
-            </div>
-            <div class="contact-box">
-                <i class='bx bx-phone'></i>
-                <h3>Phone</h3>
-                <p>+374 98 02 22 98</p>
-                <a href="tel:+37400000000" class="contact-btn">Call Me</a>
-            </div>
-            <div class="contact-box">
-                <i class='bx bxl-linkedin'></i>
-                <h3>LinkedIn</h3>
-                <p>Suren Ghazaryan</p>
-                <a href="https://www.linkedin.com/in/suren-ghazaryan-883673258/" target="_blank" class="contact-btn">Connect</a>
-            </div>
-           
-        </div>
-    </section>
         <!-- footer section -->
         <footer class="footer">
             <div class="footer-iconTop">
